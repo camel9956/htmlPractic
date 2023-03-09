@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex; /*讓內容在viewport的中間*/
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow: hidden;
+    border: 2px solid red;
+}
+
+div.container{
+    display: flex;
+    height: 70vh;
+    width: 90vw;
+    border: 2px solid blue;
+}
+
+div.card{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    color: rgb(35, 90, 158);
+    border-radius: 50px;
+    height: 68vh;
+    font-weight: bold;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+div.card h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+div.card.active{
+    flex: 5;
+}
+
+div.card.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.5s;
+}
+
+/* 小屏幕下只會有三張圖 */
+@media screen and (max-width: 576px) {
+    .container {
+      width: 100vw;   /*原本是90vw，為了在小屏幕下佔用更多空間所以設100vw*/
+    }
+    .card:nth-of-type(4),
+    .card:nth-of-type(5) {
+      display: none;
+    }
+  }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expandingCard</title>
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card active" style="background-image: url('https://images.pexels.com/photos/10803285/pexels-photo-10803285.jpeg');">
+            <h3>first</h3>
+        </div>
+        <div class="card" style="background-image: url('https://images.pexels.com/photos/1924955/pexels-photo-1924955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+            <h3>second</h3>
+        </div>
+        <div class="card" style="background-image: url('https://images.pexels.com/photos/11677124/pexels-photo-11677124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+            <h3>third</h3>
+        </div>
+        <div class="card" style="background-image: url('https://images.pexels.com/photos/6587991/pexels-photo-6587991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+           <h3>four</h3>
+        </div>
+        <div class="card" style="background-image: url('https://images.pexels.com/photos/1233535/pexels-photo-1233535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+            <h3>five</h3>
+        </div>
+    </div>
+</body>
+
+<script>
+    let cards = $(".card");
+    console.log(cards);
+
+    cards.on("click",function(){
+       cards.removeClass("active");
+        $(this).addClass("active");
+   })
+
+</script>
+</html>
