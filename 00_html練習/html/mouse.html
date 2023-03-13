@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/all.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="elem">滑鼠改變顏色</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            let elem = document.getElementById('elem');
+            elem.addEventListener('click',function(){
+                 this.classList.toggle('highlight');
+            })
+            // elem.addEventListener('mouseover',function(){
+                // this.style.backgroundColor='blue';
+                // this.className='highlight textcolor';
+            // })
+            // elem.addEventListener('mouseout',function(){
+                // this.style.backgroundColor='';
+                // this.className='';
+            // })
+        })
+    </script>
+</body>
+</html>

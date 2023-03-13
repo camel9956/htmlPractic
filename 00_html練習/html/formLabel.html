@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <label for="name">name</label>
+        <input type="text" id="name" name="name" size="30">
+        <input type="button" id="btn" value="送出">
+    </form>
+
+    <div id="result">結果:</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            document.getElementById('btn').addEventListener('click',function(){
+                let name = document.getElementById('name');
+                let result = document.getElementById('result');
+                result.textContent = name.value;
+            })
+        })
+    </script>
+</body>
+</html>

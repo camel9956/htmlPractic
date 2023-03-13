@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body id="events">
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                <h1>Events</h1>
+                <p><a href="#">A Link</a></p>
+                <input name="button" type="button" id="button" value="A Button">
+                <input name="textfield" id="textfield" type="text" placeholder="Click InputBox!">
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        $(document).ready(function(){
+            $('html').dblclick(function(){
+                alert('Good Day!')
+            })
+
+            $('a').mouseover(function(){
+                let message = '<p>You moused over a link</p>';
+                $('.main').append(message);
+            })
+            $('#button').click(function(){
+                $(this).val("Stop that");
+            })
+
+            $('#textfield').focus(function(){
+                $(this).css('background-color','yellow')
+            })
+        })
+    </script>
+</body>
+</html>

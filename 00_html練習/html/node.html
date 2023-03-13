@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Title</title>
+</head>
+<body>
+    <ul id="list">
+        <li> <a href="https://tw.yahoo.com/" class="ya">Yahoo</a> </li>
+        <li> <a href="https://www.google.com/?hl=zh_tw" class="gg">Google</a> </li>
+        <li> <a href="https://shopping.pchome.com.tw/" class="gg">Yahoo</a> </li>
+    </ul>
+
+    <script>
+       let list = document.querySelectorAll('#list .gg');
+       for(var i=0,len=list.length;i<len;i++){
+        console.log(list.item(i).href);
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1 -->
+    <input type="button" id="btn1" value="送出購物車1" />
+    <!-- 2 -->
+    <button id="btn" onclick="123">送出購物車</button>
+    <!-- 3 -->
+    <div id="text">
+        <p style="color:red">textContent未設定</p>
+    </div>
+    <div id="html">
+        <p style="color:blue">innerHTML未設定</p>
+    </div>
+    <button id="btn" onclick="myFun()">try</button>
+
+
+    <script>
+        // 1 -> addEventListener
+        document.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('btn1').addEventListener('click',function(){
+                window.alert('sure?')
+            },false)
+        },false);
+        // 2 -> get/set
+        let x = document.getElementById('btn').getAttribute('onclick');
+        console.log(x);
+        document.getElementById('btn').setAttribute('onclick','window.alert("確定送出?")');
+        
+        //textContent/innerHTML
+        function myFun(){
+            document.getElementById('text').textContent='<a href="www.google">Google</a>';
+            document.getElementById('html').innerHTML = '<a href="www.google">Google</a>';
+        }
+
+        console.log(text.textContent);
+        console.log(text.innerHTML);
+    
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <label for="file">檔案:</label>
+        <input type="file" id="file" name="file" multiple>
+    </form>
+    <hr>
+    <!-- <pre id="result"></pre> -->
+    <img id="result"/>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('file').addEventListener('change',function(e){
+                let input = document.getElementById('file').files[0];
+                let reader = new FileReader();
+                reader.addEventListener('load',function(){
+                    // document.getElementById('result').textContent = reader.result;
+                    document.getElementById('result').src = reader.result;
+                });
+                // reader.readAsText(input)
+                reader.readAsDataURL(input)
+            })
+        })
+    </script>
+
+</body>
+</html>

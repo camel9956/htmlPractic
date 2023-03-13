@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="name">網站名稱:</label><br>
+            <input type="text" name="name" id="name" size="30">
+        </div>
+
+        <div>
+            <label for="url">url:</label><br>
+            <input type="url" name="url" id="url" size="50">
+         </div>
+
+         <div>
+             <input type="button" id="btn" value="新增">
+        </div>
+    </form>
+
+    <div id="list"></div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('btn').addEventListener('click',function(){
+                let name = document.getElementById('name');
+                let url = document.getElementById('url');
+
+                let anchor = document.createElement('a');
+                anchor.href = url.value;
+
+                let text = document.createTextNode(name.value);
+                anchor.appendChild(text);
+                let br = document.createElement('br');
+
+                let list = document.getElementById('list');
+                list.appendChild(anchor);
+                list.appendChild(br);
+            })
+        })
+    </script>
+</body>
+</html>

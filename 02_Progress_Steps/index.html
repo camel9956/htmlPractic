@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProcessStep</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <div id="progress" class="progress"></div>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+        <button id="prev" type="button" class="btn" disabled>上一步</button>
+        <button id="next" type="button" class="btn" >下一步</button>
+
+    </div>
+
+    <script>
+        let progress = $("#progress");
+        let prev = $("#prev");
+        let next = $("#next");
+        let circles = $(".circle");
+        console.log("circles.length: "+circles.length);
+
+        let currentStep = 1 ;
+        console.log("currentStep: "+currentStep);
+
+        //next
+        next.on("click",function(){
+            if(currentStep < circles.length){
+                console.log(circles.length);
+                 currentStep++;
+                 console.log("next: "+currentStep);
+                 update();
+            }
+        })
+
+        //prev
+        prev.on("click",function(){
+            if(currentStep > 1){
+                currentStep--;
+                console.log("prev: "+currentStep);
+                update();
+            }
+        })
+
+        function update(){
+            circles.each(function(index,circleItem){
+                if(index < currentStep){
+                    circleItem.classList.add("active");
+                    console.log("index: "+index);
+                }else{
+                    circleItem.classList.remove("active");
+                }
+            })
+            let actives = $(".active");
+            console.log("actives: "+actives.length);
+            //點擊的圓圈占全部圓圈的比例(%)
+            progress.css("width",((actives.length-1) / (circles.length-1) * 100)+"%");
+            if (currentStep === 1) {
+                prev.prop('disabled',true);
+            }else if (currentStep === 4){
+                next.prop('disabled',true);
+            }else{
+                prev.prop('disabled',false);
+                next.prop('disabled',false);
+            }
+        }
+        
+    
+    </script>
+</body>
+</html>

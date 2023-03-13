@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>最喜歡的速食店</h1>
+    <form>
+        <label><input type="checkbox" name="food" value="麥當勞">麥當勞</label>
+        <label><input type="checkbox" name="food" value="肯德基">肯德基</label>
+        <label><input type="checkbox" name="food" value="丹丹漢堡">丹丹漢堡</label>
+        <input type="button" value="送出" id="btn">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('btn').addEventListener('click',function(){
+                let result = [];
+                let foods = document.getElementsByName('food');
+                for (let i = 0, len = foods.length ; i<len;i++){
+                    let food = foods.item(i);
+                    if(food.checked){
+                        result.push(food.value);
+                    }
+                }
+                alert(result.toString());
+            })
+        });
+    </script>
+</body>
+</html>
