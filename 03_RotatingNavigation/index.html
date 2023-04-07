@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>RotatingNavigation</title>
+</head>
+<body>
+    
+    <div class="container show-nav">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close"><i class="fa-solid fa-xmark"></i></button>
+                <button id="open"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>全家抹茶技</h1>
+            <time datetime="2023-03-14">2023-03-14</time>
+            <p>全家便利商店新推出季節限定的「抹茶技」，一共10款商品，從麵包、甜點到冰品均有，滿足抹茶控的各種口腹之慾，不能出國去日本也沒關係，你家巷口的全家就能吃到各款抹茶！全台的抹茶控們千萬別錯過！全家便利商店期間限定，錯過可惜！</p>
+            <p>選用靜岡抹茶粉製作，搭配小農牛乳，抹茶與牛乳口味搭配起來就是個大眾口味的美味冰淇淋，這個銅板價格吃起來不心疼!!</p>
+            <img src="https://nevent.family.com.tw/20230308_Matcha/images/img_01.jpg" alt="抹茶技">
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><i class="fa-solid fa-house"> 首頁</i></li>
+            <li><i class="fa-solid fa-user"> 關於我們</i></li>
+            <li><i class="fa-solid fa-envelope"> 聯絡資訊</i></li>
+        </ul>
+    </nav>
+
+
+
+    <script>
+        let open = $("#open");
+        let close = $("#close");
+        let container = $(".container")
+
+        open.on("click",function(){
+            container.addClass("show-nav");
+        })
+
+        close.on("click",function(){
+            container.removeClass("show-nav");
+        })
+
+    </script>
+
+</body>
+</html>
