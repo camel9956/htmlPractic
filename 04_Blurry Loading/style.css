@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.bg{
+    background: url("https://janstockcoin.com/wp-content/uploads/2021/06/pexels-photo-747964-2048x1293.jpeg")
+    center / cover;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px) ;
+    height: calc(100vh + 60px);
+    z-index: -1;
+}
+.loading-text {
+    font-size: 50px;
+    color: rgb(11, 12, 14);
+  }
